@@ -132,28 +132,36 @@ const data = [
 //   or 5 separate arguments mapping to each piece of the data object above.
 
 const [articles] = document.getElementsByClassName("articles");
-function createArticle(inserts) {
+function createArticle(insert) {
   const article = document.createElement("div");
   article.classList.add("article");
 
   const title = document.createElement("h2");
-  title.textContent = inserts.title;
+  title.textContent = insert.title;
 
   const date = document.createElement("p");
   date.classList.add("date");
-  date.textContent = inserts.date;
+  date.textContent = insert.date;
 
   const firstParagraph = document.createElement("p");
-  firstParagraph.textContent = inserts.firstParagraph;
+  firstParagraph.textContent = insert.firstParagraph;
 
   const secondParagraph = document.createElement("p");
-  secondParagraph.textContent = inserts.secondParagraph;
+  secondParagraph.textContent = insert.secondParagraph;
 
   const thirdParagraph = document.createElement("p");
-  thirdParagraph.textContent = inserts.thirdParagraph;
+  thirdParagraph.textContent = insert.thirdParagraph;
 
   const expandButton = document.createElement("span");
+  expandButton.textContent = "Toggle";
   expandButton.classList.add("expandButton");
+
+  // Step 2: Add an event listener to the expandButton span.
+  // This event listener should toggle the class 'article-open' on the 'article' div.
+  expandButton.addEventListener("click", e => {
+    article.classList.toggle("article-open");
+  });
+
   article.append(
     title,
     date,
