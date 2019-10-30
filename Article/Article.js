@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "New Article Launched",
+    date: "Jan 20th, 3000",
+    firstParagraph: "Year 3000 is like",
+
+    secondParagraph: "Going to be like!!",
+
+    thirdParagraph: "New Article!!"
   }
 ];
 
@@ -181,3 +190,6 @@ const [articles] = document.getElementsByClassName("articles");
 data.forEach(e => {
   articles.appendChild(createArticle(e));
 });
+
+// Step 5: Add a new article to the array. Make sure it is in the same format as the others.
+// Refresh the page to see the new article.
