@@ -193,3 +193,51 @@ data.forEach(e => {
 
 // Step 5: Add a new article to the array. Make sure it is in the same format as the others.
 // Refresh the page to see the new article.
+// {
+//   title: "New Article Launched",
+//   date: "Jan 20th, 3000",
+//   firstParagraph: "Year 3000 is like",
+
+//   secondParagraph: "Going to be like!!",
+
+//   thirdParagraph: "New Article!!"
+// }
+
+// ### Part 2: Add Articles
+
+// * Now that we have our components built, add a few articles of your own to the data array.
+// Notice how our JavaScript code automatically creates the new articles and adds the styling and
+// functionality we just built to them. This is the power of components. Write the code once and add
+// as many components as you want all while maintaining the functionality we built!
+
+const data2 = [
+  {
+    title: "New Article Launched",
+    date: "Jan 20th, 3000",
+    firstParagraph: "Year 3000 is like",
+
+    secondParagraph: "Going to be like!!",
+
+    thirdParagraph: "New Article!!"
+  },
+  {
+    title: "New Article Launched",
+    date: "Jan 20th, 3000",
+    firstParagraph: "Year 3000 is like",
+
+    secondParagraph: "Going to be like!!",
+
+    thirdParagraph: "New Article!!"
+  }
+];
+
+function createArticles(insert) {
+  const articles = document.createElement("div");
+  articles.classList.add("articles");
+  insert.forEach(e => {
+    articles.appendChild(createArticle(e));
+  });
+  return articles;
+}
+
+articles.insertAdjacentElement("afterend", createArticles(data2));
