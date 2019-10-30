@@ -1,12 +1,12 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
 let menuItems = [
-  'Students',
-  'Faculty',
+  "Students",
+  "Faculty",
   "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+  "Tech Trends",
+  "Music",
+  "Log Out"
 ];
 
 /* 
@@ -33,3 +33,29 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+// Step 1: Write a function that will create a menu component as seen below:
+
+// <div class="menu">
+//   <ul>
+//     {each menu item as a list item}
+//   </ul>
+// </div>
+function createMenu(insert) {
+  const menu = document.createElement("div");
+  menu.classList.add("menu");
+
+  const list = document.createElement("ul");
+  insert.forEach(e => list.appendChild(createMenuItem(e)));
+
+  menu.appendChild(list);
+  return menu;
+}
+
+function createMenuItem(insert) {
+  const menuItem = document.createElement("li");
+  menuItem.textContent = insert;
+  return menuItem;
+}
+
+console.log(createMenu(menuItems));
