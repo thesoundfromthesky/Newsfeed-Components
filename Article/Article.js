@@ -171,6 +171,7 @@ function createArticle(insert) {
     expandButton
   );
 
+  // Step 3: return the entire component.
   return article;
 }
 
